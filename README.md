@@ -4,7 +4,7 @@ Raman spectroscopy is a nondestructive method commonly used in chemistry to prov
 
 ## Raman spectroscopy for assessing tissue engineered products
 
-Power et al. (2020) show how machine learning can be used to interpret complex Raman spectra collected from native and engineered tissues. 
+Single cell and tissue spectra were collected using a commercial Raman spectrometer. Preprocessing is performed using the hyperSpec R package (Beleites and Sergo). Power et al. (2020) show how machine learning can be used to interpret complex Raman spectra collected from native and engineered tissues. 
 
 Highlights
 - Real-world example of implementing Raman spectroscopy-based QCs in a GMP setting.
@@ -12,6 +12,8 @@ Highlights
 - The maturity of engineered cartilage can be sensed even with collagen scaffolds.
 - Statistical learning allows for the advanced interpretability of Raman spectra.
 
-## Reference
+## References
+
+Claudia Beleites and Valter Sergo: `hyperSpec: a package to handle hyperspectral data sets in R', R package version 0.100.0. https://github.com/r-hyperspec/hyperSpec
 
 Power L, Fasolato C, Barbero A, Wendt D, Wixmerten A, Marin I, Asnaghi MA (2020) Sensing tissue engineered cartilage quality with Raman spectroscopy and statistical learning for the development of advanced characterization assays. Biosensors and Bioelectronics, 166: 112467
