@@ -24,9 +24,32 @@ plot(NC, col = "blue", add = TRUE)
 legend("top",c("NC","PC", "background"), lty = 1, col = c("blue", "red", "black"))
 title(main = "Mean P0 NC, PC, and background spectra")
 
+# smooth spectra with Loess
 smoothNC = spc.loess(NC, seq(0,3600,4))
 smoothPC = spc.loess(PC, seq(0,3600,4))
 png("smooth_NC_PC_P0.png")
 plot(smoothNC[,,500~3050], col = "blue") 
 plot(smoothPC[,,500~3050], col = "red", add = TRUE) 
 dev.off()
+
+#polynomaial baseline subtraction (least squares fit)
+polyBaseline = function(spectra) {
+  plot(spectra[1:4,,], col = rainbow(4))
+  baselines = spc.fit.poly.below(spectra[,,500~3050], poly.order = 6) #setting npts.min = 40 to a higher number doesn't seem to help remove the fluorescence arc
+  print(spectra)
+  plot(baselines[1:4], add = TRUE, col = rainbow(4))
+  subbed = spectra[,,500~3050] - baselines
+  return(subbed)
+}
+NC_bl = polyBaseline(smoothNC)
+PC_bl = polyBaseline(smoothPC)
+
+#area normalization using the mean spectra
+normfnc = function(spectra) {
+  factors = 1 / apply (spectra[, , 600~1800], 1, mean) 
+  normed <- sweep (spectra, 1, factors, "*")
+  plot(mean(normed))
+  return(normed)
+}
+NC_n = normfnc(NC_bl)
+PC_n = normfnc(PC_bl)
