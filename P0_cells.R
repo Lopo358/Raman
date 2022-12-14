@@ -53,3 +53,15 @@ normfnc = function(spectra) {
 }
 NC_n = normfnc(NC_bl)
 PC_n = normfnc(PC_bl)
+
+plot(NC_n, wl.range = c(600~1800,2800~3050), "spcmeansd", col = "blue", xoffset = 750)
+plot(PC_n, "spcmeansd", col= "red", add = TRUE)
+plot(mean(NC_n), col = "blue")
+plot(mean(PC_n), col= "red", add = TRUE)
+
+legend("topleft",c("NC","PC"), lty = 1, col = c("blue", "red"))
+title(main = "Mean of processed spectra measured at 532 nm")
+
+#save processed spectra
+saveRDS(NC_n, file = "./Output/NC-processed-spectra.rds")
+saveRDS(PC_n, file = "./Output/PC-processed-spectra.rds")
