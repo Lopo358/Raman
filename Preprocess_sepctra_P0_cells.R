@@ -1,3 +1,5 @@
+# Pre-process Raman spectra using the hyperSpec package
+
 # https://r-hyperspec.github.io/hyperSpec/
 
 #WiTec .spc file format - single spectra
