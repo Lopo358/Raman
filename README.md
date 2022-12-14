@@ -16,4 +16,6 @@ Highlights
 
 Claudia Beleites and Valter Sergo: `hyperSpec: a package to handle hyperspectral data sets in R', R package version 0.100.0. https://github.com/r-hyperspec/hyperSpec
 
+# Citation
+
 Power L, Fasolato C, Barbero A, Wendt D, Wixmerten A, Marin I, Asnaghi MA (2020) Sensing tissue engineered cartilage quality with Raman spectroscopy and statistical learning for the development of advanced characterization assays. Biosensors and Bioelectronics, 166: 112467
