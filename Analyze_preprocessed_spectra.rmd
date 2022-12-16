@@ -1,0 +1,41 @@
+---
+title: "Single cells"
+author: "Laura Power"
+date: "`r format(Sys.time(), '%a %d %b, %Y')`"
+output: html_document
+---
+
+## NC and PC cells at passage 0
+
+```{r setup, include=FALSE}
+library(hyperSpec)
+library(devtools)
+library(ggfortify)
+library(plotrix)
+library(MASS)
+library(gridExtra)
+```
+
+```{r load data, include=FALSE}
+NC = readRDS("./Output/NC-processed-spectra.rds")
+PC = readRDS("./Output/PC-processed-spectra.rds")
+```
+
+```{r plot spectra, echo = FALSE}
+plot(mean(NC), wl.range = c(600~1800,2800~3050), xoffset = 750, col = "blue")
+plot(mean(PC), wl.range = c(600~1800,2800~3050), xoffset = 750, col = "black", add = TRUE)
+legend( "topleft", c("NC", "PC"), lty = 1, col = c("blue", "black"))
+title(main = "Mean cell spectra")
+
+plot(mean(NC), wl.range = c(600~1800), col = "dark blue")
+plot(mean(PC), wl.range = c(600~1800), col = "black", add = TRUE)
+legend( "topleft", c("NC", "PC"), lty = 1, col = c("blue", "black"))
+title(main = "Mean cell spectra")
+
+a = 1000
+b = 1200
+plot(mean(NC), wl.range = c(a~b), col = "blue")
+plot(mean(PC), wl.range = c(a~b), col = "black", add = TRUE)
+legend( "topleft", c("NC", "PC"), lty = 1, col = c("blue", "black"))
+title(main = "Mean cell spectra")
+```
