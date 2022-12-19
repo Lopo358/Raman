@@ -1,3 +1,3 @@
 # Engineered cartilage
 
-Cartilage was engineered from nasal chondrocytes as described in Power et al. 
+Cartilage was engineered from nasal chondrocytes as described in Power et al. 2020
