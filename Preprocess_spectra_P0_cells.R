@@ -16,8 +16,8 @@ collapseHyperspec = function(path) {
 }
 
 #cells on CaF2
-NC = collapseHyperspec("./Data/NC*.spc")
-PC = collapseHyperspec("./Data/PC*.spc")
+NC = collapseHyperspec("./Data/Single_cells/NC*.spc")
+PC = collapseHyperspec("./Data/Single_cells/PC*.spc")
 
 plot(mean(PC), col = "red")
 plot(mean(NC), col = "blue", add = TRUE)
